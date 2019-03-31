@@ -21,17 +21,17 @@ docker stop   vibrant_haibt
 `docker create --volumes-from vibrant_haibt  --name rancher-data rancher/rancher:v2.0.6`
 
 ### 4、备份旧server数据容器
-#### 原备份方式
+#### 4.1、原备份方式
 ~~docker create --volumes-from vibrant_haibt    \
 --name rancher-data-snapshot-2.0.6 rancher/rancher:v2.0.6~~
-#### rancher官方又换了一个备份历史数据的方式如下，上述方式不再使用（不过感觉新方式有点慢）
+#### 4.2、rancher官方又换了一个备份历史数据的方式如下，上述方式不再使用（不过感觉新方式有点慢）
 ```bash
 docker run  --volumes-from rancher-data -v $PWD:/backup \
 alpine tar zcvf /backup/rancher-data-backup-2.1.7-20190331.tar.gz \
 /var/lib/rancher
 ```
-### 使用备份数据启动rancher
-## 下载并运行新版rancher容器
+### 5、使用备份数据启动rancher
+#### 5.1、下载并运行新版rancher容器
 ```bash
 docker pull rancher/rancher:latest
 docker run -d --volumes-from rancher-data --restart=unless-stopped \
