@@ -9,6 +9,11 @@ docker run -d --restart=unless-stopped   -p 8080:80 -p 4433:443   \
 -v /app/ssl/Nginx/2_rancher.xiancloud.info.key:/etc/rancher/ssl/key.pem    \
  rancher/rancher --no-cacerts
 ```
+**注意： 
+1. 不要使用80和443端口
+这里我们使用端口8080和4433，这是由于成本问题，我们只有一台服务器作来运行rancher和k8s集群，k8s集群默认拉起来的ingress需要使用80和443端口，所以这里不能占用宿主机的这两个端口了。
+2. 请根据您证书实际路径修改上述脚本，不要盲目复制粘贴上述命令。
+**
 
 
 ## 单机版日常备份
