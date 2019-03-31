@@ -6,7 +6,7 @@ zkui是zookeeper的一个开源的dashboard，我们使用它作为xiancloud的�
 [configmap.yaml文件](configmap.yaml)是zkui的配置文件完整内容。
 
 #### zkui deployment
-[deployment.yaml](deployment.yaml)zkui deployment配置文件
+[deployment.yaml](deployment.yaml)是zkui deployment配置文件
 
 #### zkui service
 [zkui service](zkui-service-nodeport.yaml)配置文件
