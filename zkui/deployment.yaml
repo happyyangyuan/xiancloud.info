@@ -1,0 +1,43 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    workload.user.cattle.io/workloadselector: deployment-zkui-xiancloud-info
+  name: zkui-xiancloud-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-zkui-xiancloud-info
+  template:
+    metadata:
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-zkui-xiancloud-info
+    spec:
+      containers:
+      - image: xiancloud/zkui
+        imagePullPolicy: IfNotPresent
+        name: zkui-xiancloud-info
+        ports:
+        - containerPort: 9090
+          name: 9090tcp01
+          protocol: TCP
+        resources:
+          limits:
+            memory: 512Mi
+        volumeMounts:
+        - mountPath: /data/workspace/zkui/target/config.cfg
+          name: vol1
+          readOnly: true
+          subPath: config.cfg
+      #imagePullSecrets:
+      #- name: gz-registry-harbor
+      volumes:
+      - configMap:
+          defaultMode: 256
+          items:
+          - key: config.cfg
+            path: config.cfg
+          name: zkui-xiancloud-info
+          optional: false
+        name: vol1

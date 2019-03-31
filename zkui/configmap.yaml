@@ -1,0 +1,31 @@
+﻿apiVersion: v1
+data:
+  config.cfg: "#Server Port\nserverPort=9090\n#Comma seperated list of all the zookeeper
+    servers\nzkServer=zk-xiancloud-info-zookee-0.zk-xiancloud-info-zookee-headless:2181\n#Http
+    path of the repository. Ignore if you dont intent to upload files from repository.\nscmRepo=http://myserver.com/@rev1=\n#Path
+    appended to the repo url. Ignore if you dont intent to upload files from repository.\nscmRepoPath=//appconfig.txt\n#if
+    set to true then userSet is used for authentication, else ldap authentication
+    is used.\nldapAuth=false\nldapDomain=mycompany,mydomain\n#ldap authentication
+    url. Ignore if using file based authentication.\nldapUrl=ldap://<ldap_host>:<ldap_port>/dc=mycom,dc=com\n#Specific
+    roles for ldap authenticated users. Ignore if using file based authentication.\nldapRoleSet={\"users\":
+    [{ \"username\":\"domain\\\\user1\" , \"role\": \"ADMIN\" }]}\nuserSet = {\"users\":
+    [{ \"username\":\"admin\" , \"password\":\"manager\",\"role\": \"ADMIN\" },{ \"username\":\"appconfig\"
+    , \"password\":\"appconfig\",\"role\": \"USER\" }]}\n#Set to prod in production
+    and dev in local. Setting to dev will clear history each time.\nenv=dev\njdbcClass=org.h2.Driver\njdbcUrl=jdbc:h2:zkui\njdbcUser=root\njdbcPwd=manager\n#If
+    you want to use mysql db to store history then comment the h2 db section.\n#jdbcClass=com.mysql.jdbc.Driver\n#jdbcUrl=jdbc:mysql://localhost:3306/zkui\n#jdbcUser=root\n#jdbcPwd=manager\nloginMessage=Please
+    login using admin/manager or appconfig/appconfig.\n#session timeout 5 mins/300
+    secs.\nsessionTimeout=300\n#Default 5 seconds to keep short lived zk sessions.
+    If you have large data then the read will take more than 30 seconds so increase
+    this accordingly. \n#A bigger zkSessionTimeout means the connection will be held
+    longer and resource consumption will be high.\nzkSessionTimeout=5\n#Block PWD
+    exposure over rest call.\nblockPwdOverRest=false\n#ignore rest of the props below
+    if https=false.\nhttps=false\nkeystoreFile=/home/user/keystore.jks\nkeystorePwd=password\nkeystoreManagerPwd=password\n#
+    The default ACL to use for all creation of nodes. If left blank, then all nodes
+    will be universally accessible\n# Permissions are based on single character flags:
+    c (Create), r (read), w (write), d (delete), a (admin), * (all)\n# For example
+    defaultAcl={\"acls\": [{\"scheme\":\"ip\", \"id\":\"192.168.1.192\", \"perms\":\"*\"},
+    {\"scheme\":\"ip\", id\":\"192.168.1.0/24\", \"perms\":\"r\"}]\ndefaultAcl=\n#
+    Set X-Forwarded-For to true if zkui is behind a proxy\nX-Forwarded-For=false"
+kind: ConfigMap
+metadata:
+  name: zkui-xiancloud-info

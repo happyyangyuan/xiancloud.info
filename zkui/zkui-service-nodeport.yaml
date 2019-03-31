@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zkui-xiancloud-info-nodeport
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: 9090tcp01
+    port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-zkui-xiancloud-info
+  sessionAffinity: None
+  type: NodePort
