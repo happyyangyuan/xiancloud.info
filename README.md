@@ -1,5 +1,5 @@
-# xiancloud.info website
-xian website code 
+# xiancloud.info站点
+本代码库是xiancloud站点所有完整代码，包括部署文档以及源码。
 
 
 ## xiancloud.info站点使用rancher管理和部署的
