@@ -9,5 +9,9 @@ zkui是zookeeper的一个开源的dashboard，我们使用它作为xiancloud的�
 [deployment.yaml](deployment.yaml)zkui deployment配置文件
 
 #### zkui service
-[zkui service]（zkui-service-nodeport.yaml）配置文件
+[zkui service](zkui-service-nodeport.yaml)配置文件
+
+#### 使用kubectl拉起上述资源
+[脚本内容](kubectl-create.sh)
+
 
