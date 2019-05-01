@@ -43,7 +43,7 @@
 - 网易云——容器服务
 
 ### 实践
-https://rancher.xiancloud.info:4433
+https://rancher.xiancloud.info:4433/c/c-9mnx4/monitoring
 
 ## 参考
 https://www.cnblogs.com/163yun/p/8889083.html
