@@ -42,7 +42,8 @@
 - 七牛云——容器服务
 - 网易云——容器服务
 
-
+### 实践
+https://rancher.xiancloud.info:4433
 
 ## 参考
 https://www.cnblogs.com/163yun/p/8889083.html
