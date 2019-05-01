@@ -27,17 +27,20 @@
 - prometheus
 - istio
 - 开源容器平台
-1. [rancher](https://github.com/rancher/rancher)
-2. [kubesphere](https://github.com/kubesphere/kubesphere)
+  1. [rancher](https://github.com/rancher/rancher)
+  2. [kubesphere社区版](https://github.com/kubesphere/kubesphere)
 - 闭源容器平台
-1. 才云compass——Caicloud Compass
-2. 道客——daocloud
-3. 
+  1. 才云compass——Caicloud Compass
+  2. 道客-daocloud
+  3. 阿里飞天容器平台
+  4. 灵雀云
 ### 公有云计算
-- aliyun.com——容器服务
-- cloud.tencent.com——容器服务
-- aws——容器服务
-- qingyun
+- 阿里云——容器服务
+- 腾讯云——容器服务
+- 亚马逊——容器服务
+- 青云——kubesphere云服务
+- 七牛云——容器服务
+- 网易云——容器服务
 
 
 
